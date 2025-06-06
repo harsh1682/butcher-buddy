@@ -92,6 +92,15 @@ const products = [
     category: "Chicken",
     image: "Chicken_feet.jpg"
   },
+  {
+    id: 10,
+    name: "Chicken feet",
+    description: "Ready to cook",
+    price: 189,
+    weight: "500g",
+    category: "Chicken",
+    image: "Chicken_feet.jpg"
+  },
 ];
 
 const productsContainer = document.querySelector(".products");
