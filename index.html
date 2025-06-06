@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="container header-container">
       <div class="logo">🔪 Butcher Buddy</div>
       <nav>
@@ -22,43 +22,34 @@
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <h1>Fresh Pork & Chicken Delivered To Your Doorstep</h1>
-    <a href="https://wa.me/919056551682" target="_blank" class="btn-primary" aria-label="Order Now on WhatsApp">Order Now on WhatsApp</a>
+  <section class="categories container" aria-label="Categories">
+    <button class="category active" data-cat="all">All</button>
+    <button class="category" data-cat="chicken">Chicken</button>
+    <button class="category" data-cat="pork">Pork</button>
+    <button class="category" data-cat="marinated">Marinated</button>
   </section>
 
-  <main>
+  <main class="container" id="home">
     <section class="products" aria-label="Product List">
-      <!-- Product cards remain same -->
-      <!-- ... -->
+      <!-- Products will be injected by JS -->
     </section>
 
     <section class="info" id="contact">
       <h2>Contact Us</h2>
-      <div>
-        <strong>Delivery Area:</strong>
-        <p>Chandigarh (All Sectors)</p>
-      </div>
-      <div>
-        <strong>Delivery Time Slots:</strong>
-        <p>10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM</p>
-      </div>
-      <div>
-        <strong>Order Contact:</strong>
-        <p><a href="https://wa.me/919056551682" target="_blank">9056551682 (WhatsApp)</a></p>
-      </div>
+      <p><strong>Delivery Area:</strong> Chandigarh (All Sectors)</p>
+      <p><strong>Delivery Time Slots:</strong> 10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM</p>
+      <p><strong>Order Contact:</strong> <a href="https://wa.me/919056551682" target="_blank">9056551682 (WhatsApp)</a></p>
     </section>
 
-    <section id="about" style="max-width:700px; margin: 60px auto 40px; padding: 0 20px;">
+    <section id="about">
       <h2>About Butcher Buddy</h2>
       <p>
         Butcher Buddy is your trusted partner for fresh, quality pork and chicken meat in Chandigarh.
-        We deliver hygienically packed meat cuts right to your doorstep, ensuring freshness and
-        convenience.
+        We deliver hygienically packed meat cuts right to your doorstep, ensuring freshness and convenience.
       </p>
     </section>
 
-    <section id="orders" style="max-width:700px; margin: 60px auto 40px; padding: 0 20px;">
+    <section id="orders">
       <h2>Order Process</h2>
       <ol>
         <li>Choose your favorite meat cuts from our product list.</li>
@@ -72,5 +63,89 @@
   <footer>
     &copy; 2025 Butcher Buddy. All rights reserved.
   </footer>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Chicken Curry Cut",
+        description: "Bone-in, skinless chunks",
+        price: 149,
+        weight: "500g",
+        category: "chicken",
+        image: "https://i.imgur.com/j5dF5zL.jpg"
+      },
+      {
+        id: 2,
+        name: "Chicken Breast Boneless",
+        description: "Tender, juicy",
+        price: 179,
+        weight: "500g",
+        category: "chicken",
+        image: "https://i.imgur.com/t9kG5RF.jpg"
+      },
+      {
+        id: 3,
+        name: "Pork Ribs",
+        description: "Perfect for BBQ & grilling",
+        price: 249,
+        weight: "500g",
+        category: "pork",
+        image: "https://i.imgur.com/0OqQw3W.jpg"
+      },
+      {
+        id: 4,
+        name: "Pork Mince",
+        description: "Great for keema & patties",
+        price: 189,
+        weight: "500g",
+        category: "pork",
+        image: "https://i.imgur.com/4V3sTq3.jpg"
+      },
+      {
+        id: 5,
+        name: "Marinated Chicken Tikka",
+        description: "Ready to cook",
+        price: 199,
+        weight: "400g",
+        category: "marinated",
+        image: "https://i.imgur.com/8SuTQMd.jpg"
+      },
+    ];
+
+    const productsContainer = document.querySelector(".products");
+    const categoryButtons = document.querySelectorAll(".category");
+
+    function renderProducts(filter = "all") {
+      productsContainer.innerHTML = "";
+      const filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter);
+
+      filteredProducts.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" loading="lazy"/>
+          <h3>${product.name}</h3>
+          <p class="desc">${product.description}</p>
+          <p class="weight">${product.weight}</p>
+          <p class="price">₹${product.price}</p>
+          <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}" target="_blank" class="btn-primary" aria-label="Order ${product.name} on WhatsApp">Order Now</a>
+        `;
+        productsContainer.appendChild(card);
+      });
+    }
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        categoryButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderProducts(btn.getAttribute("data-cat"));
+      });
+    });
+
+    // Initial load - show all products
+    renderProducts();
+  </script>
 </body>
 </html>
