@@ -8,101 +8,119 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <!-- Replace logo.png with your actual logo filename -->
-        <img src="logo.png" alt="Butcher Buddy Logo" class="logo-img" />
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#orders">Orders</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="categories container" aria-label="Categories">
-    <button class="category active" data-cat="all">All</button>
-    <button class="category" data-cat="chicken">Chicken</button>
-    <button class="category" data-cat="pork">Pork</button>
-    <button class="category" data-cat="marinated">Marinated</button>
-  </section>
-
-  <main class="container" id="home">
-    <section class="products" aria-label="Product List">
-      <!-- Products will be injected by JS -->
-    </section>
-
-    <section class="info" id="contact">
-      <h2>Contact Us</h2>
-      <p><strong>Delivery Area:</strong> Chandigarh (All Sectors)</p>
-      <p><strong>Delivery Time Slots:</strong> 10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM</p>
-      <p><strong>Order Contact:</strong> <a href="https://wa.me/919056551682" target="_blank">9056551682 (WhatsApp)</a></p>
-    </section>
-
-    <section id="about">
-      <h2>About Butcher Buddy</h2>
-      <p>
-        Butcher Buddy is your trusted partner for fresh, quality pork and chicken meat in Chandigarh.
-        We deliver hygienically packed meat cuts right to your doorstep, ensuring freshness and convenience.
-      </p>
-    </section>
-
-    <section id="orders">
-      <h2>Order Process</h2>
-      <ol>
-        <li>Choose your favorite meat cuts from our product list.</li>
-        <li>Contact us via WhatsApp or phone with your order details.</li>
-        <li>We confirm your order and delivery slot.</li>
-        <li>Fresh meat is delivered to your home in the chosen time slot.</li>
-      </ol>
-    </section>
-  </main>
-
-<footer class="main-footer">
-  <div class="container footer-container">
-    <div class="footer-section">
-      <h4>Butcher Buddy</h4>
-      <p>Fresh meat delivered to your door in Chandigarh.</p>
-      <p><strong>Phone:</strong> <a href="tel:+919056551682">+91 90565 51682</a></p>
-      <p><strong>Email:</strong> <a href="mailto:butcherbuddy@gmail.com">butcherbuddy@gmail.com</a></p>
-      <p><strong>Address:</strong> Sector 38, Chandigarh, India</p>
-    </div>
-
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#orders">Orders</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h4>Follow Us</h4>
-      <div class="social-links">
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-        </a>
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
-        </a>
-      </div>
-    </div>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="logo.png" alt="Butcher Buddy Logo" class="splash-logo" />
   </div>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Butcher Buddy. All rights reserved.</p>
+  <!-- Main Website Content -->
+  <div id="main-content" style="display: none;">
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <img src="logo.png" alt="Butcher Buddy Logo" class="logo-img" />
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#orders">Orders</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="categories container" aria-label="Categories">
+      <button class="category active" data-cat="all">All</button>
+      <button class="category" data-cat="chicken">Chicken</button>
+      <button class="category" data-cat="pork">Pork</button>
+      <button class="category" data-cat="marinated">Marinated</button>
+    </section>
+
+    <main class="container" id="home">
+      <section class="products" aria-label="Product List"></section>
+
+      <section class="info" id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Delivery Area:</strong> Chandigarh (All Sectors)</p>
+        <p><strong>Delivery Time Slots:</strong> 10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM</p>
+        <p><strong>Order Contact:</strong> <a href="https://wa.me/919056551682" target="_blank">9056551682 (WhatsApp)</a></p>
+      </section>
+
+      <section id="about">
+        <h2>About Butcher Buddy</h2>
+        <p>
+          Butcher Buddy is your trusted partner for fresh, quality pork and chicken meat in Chandigarh.
+          We deliver hygienically packed meat cuts right to your doorstep, ensuring freshness and convenience.
+        </p>
+      </section>
+
+      <section id="orders">
+        <h2>Order Process</h2>
+        <ol>
+          <li>Choose your favorite meat cuts from our product list.</li>
+          <li>Contact us via WhatsApp or phone with your order details.</li>
+          <li>We confirm your order and delivery slot.</li>
+          <li>Fresh meat is delivered to your home in the chosen time slot.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container footer-container">
+        <div class="footer-section">
+          <h4>Butcher Buddy</h4>
+          <p>Fresh meat delivered to your door in Chandigarh.</p>
+          <p><strong>Phone:</strong> <a href="tel:+919056551682">+91 90565 51682</a></p>
+          <p><strong>Email:</strong> <a href="mailto:butcherbuddy@gmail.com">butcherbuddy@gmail.com</a></p>
+          <p><strong>Address:</strong> Sector 38, Chandigarh, India</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#orders">Orders</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Butcher Buddy. All rights reserved.</p>
+      </div>
+    </footer>
   </div>
-</footer>
 
-
+  <!-- JavaScript Section -->
   <script>
+    // Splash screen hide after delay
+    window.addEventListener("load", function () {
+      const splash = document.getElementById("splash-screen");
+      const content = document.getElementById("main-content");
+
+      setTimeout(() => {
+        splash.style.opacity = 0;
+        splash.style.pointerEvents = "none";
+        content.style.display = "block";
+      }, 2500);
+    });
+
+    // Product Rendering
     const products = [
       {
         id: 1,
