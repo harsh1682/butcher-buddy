@@ -1,0 +1,195 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  color: #333;
+}
+a {
+  text-decoration: none;
+}
+
+/* Header & Logo */
+header {
+  background-color: #b22222;
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+header .logo-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+.tagline {
+  text-align: center;
+  font-weight: 600;
+  margin-top: -12px;
+  color: #b22222;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1604908810997-4a8d0d860c61?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+.hero h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+.hero a.order-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.hero a.order-btn:hover {
+  background-color: #1ebe5a;
+}
+
+/* Products Section */
+.products {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 25px;
+}
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-content {
+  padding: 15px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 5px 0;
+  color: #b22222;
+}
+.product-desc {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #555;
+  flex-grow: 1;
+}
+.product-info {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.order-btn-small {
+  background-color: #25d366;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+  display: block;
+}
+.order-btn-small:hover {
+  background-color: #1ebe5a;
+}
+
+/* Delivery & Contact Section */
+.info-section {
+  max-width: 960px;
+  margin: 50px auto 30px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.info-box {
+  flex: 1 1 250px;
+  border-left: 6px solid #b22222;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.info-icon {
+  font-size: 2.2rem;
+  color: #b22222;
+}
+.info-text strong {
+  font-weight: 700;
+}
+.contact-link {
+  color: #b22222;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-top: 40px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    letter-spacing: normal;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .products {
+    grid-template-columns: 1fr;
+  }
+  .info-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
