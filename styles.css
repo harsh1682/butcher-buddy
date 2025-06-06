@@ -36,11 +36,10 @@ body {
   justify-content: space-between;
 }
 
-.logo {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  user-select: none;
+.logo img.logo-img {
+  height: 40px;  /* Adjust this to your logo's best size */
+  width: auto;
+  display: block;
 }
 
 nav ul.nav-links {
