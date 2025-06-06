@@ -1,3 +1,15 @@
+// Splash screen hide after delay
+    window.addEventListener("load", function () {
+      const splash = document.getElementById("splash-screen");
+      const content = document.getElementById("main-content");
+
+      setTimeout(() => {
+        splash.style.opacity = 0;
+        splash.style.pointerEvents = "none";
+        content.style.display = "block";
+      }, 2500);
+    });
+
 const products = [
   {
     id: 1,
