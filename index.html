@@ -2,82 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Butcher Buddy</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fefefe; color: #333; }
-    header { background: #d62828; color: white; padding: 1rem; text-align: center; }
-    .section { padding: 2rem; }
-    .product-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    .product-table th, .product-table td { border: 1px solid #ccc; padding: 0.75rem; text-align: left; }
-    .product-table th { background: #f2f2f2; }
-    .contact, .delivery { background: #f9f9f9; margin-top: 2rem; padding: 1.5rem; border-left: 5px solid #d62828; }
-    footer { background: #222; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
-    .whatsapp { display: inline-block; background: #25d366; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 5px; margin-top: 1rem; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <header>
+    <div class="logo-icon">🔪</div>
     <h1>Butcher Buddy</h1>
-    <p>Fresh Pork & Chicken Delivered in Chandigarh</p>
   </header>
+  <p class="tagline">Fresh Pork & Chicken Delivered in Chandigarh</p>
 
-  <div class="section">
-    <h2>Our Products</h2>
-    <table class="product-table">
-      <tr>
-        <th>Product Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Weight</th>
-      </tr>
-      <tr>
-        <td>Chicken Curry Cut</td>
-        <td>Bone-in, skinless chunks</td>
-        <td>₹149</td>
-        <td>500g</td>
-      </tr>
-      <tr>
-        <td>Chicken Breast Boneless</td>
-        <td>Tender, juicy</td>
-        <td>₹179</td>
-        <td>500g</td>
-      </tr>
-      <tr>
-        <td>Pork Ribs</td>
-        <td>Perfect for BBQ & grilling</td>
-        <td>₹249</td>
-        <td>500g</td>
-      </tr>
-      <tr>
-        <td>Pork Mince</td>
-        <td>Great for keema & patties</td>
-        <td>₹189</td>
-        <td>500g</td>
-      </tr>
-      <tr>
-        <td>Marinated Chicken Tikka</td>
-        <td>Ready to cook</td>
-        <td>₹199</td>
-        <td>400g</td>
-      </tr>
-    </table>
-  </div>
+  <section class="hero" role="banner" aria-label="Fresh meat banner">
+    <h2>Taste The Freshness, Delivered To Your Doorstep</h2>
+    <a href="https://wa.me/919056551682" target="_blank" class="order-btn" aria-label="Order now on WhatsApp">Order Now on WhatsApp</a>
+  </section>
 
-  <div class="section contact">
-    <h3>Contact & Orders</h3>
-    <p>WhatsApp us for orders or inquiries:</p>
-    <a class="whatsapp" href="https://wa.me/919056551682" target="_blank">Chat on WhatsApp</a>
-  </div>
+  <main>
+    <section class="products" aria-label="Product listings">
 
-  <div class="section delivery">
-    <h3>Delivery Info</h3>
-    <p><strong>Delivery Area:</strong> Chandigarh (All sectors)</p>
-    <p><strong>Time Slots:</strong> 10:00 AM – 1:00 PM & 5:00 PM – 9:00 PM</p>
-  </div>
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1604908810997-4a8d0d860c61?auto=format&fit=crop&w=500&q=60" alt="Chicken Curry Cut" class="product-image" />
+        <div class="product-content">
+          <h3 class="product-name">Chicken Curry Cut</h3>
+          <p class="product-desc">Bone-in, skinless chunks</p>
+          <div class="product-info">₹149 / 500g</div>
+          <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20Chicken%20Curry%20Cut" target="_blank" class="order-btn-small" aria-label="Order Chicken Curry Cut on WhatsApp">Order on WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1601985322274-5a3e75b7f498?auto=format&fit=crop&w=500&q=60" alt="Chicken Breast Boneless" class="product-image" />
+        <div class="product-content">
+          <h3 class="product-name">Chicken Breast Boneless</h3>
+          <p class="product-desc">Tender, juicy</p>
+          <div class="product-info">₹179 / 500g</div>
+          <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20Chicken%20Breast%20Boneless" target="_blank" class="order-btn-small" aria-label="Order Chicken Breast Boneless on WhatsApp">Order on WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60" alt="Pork Ribs" class="product-image" />
+        <div class="product-content">
+          <h3 class="product-name">Pork Ribs</h3>
+          <p class="product-desc">Perfect for BBQ & grilling</p>
+          <div class="product-info">₹249 / 500g</div>
+          <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20Pork%20Ribs" target="_blank" class="order-btn-small" aria-label="Order Pork Ribs on WhatsApp">Order on WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1600901549877-f9fcdc092ed1?auto=format&fit=crop&w=500&q=60" alt="Pork Mince" class="product-image" />
+        <div class="product-content">
+          <h3 class="product-name">Pork Mince</h3>
+          <p class="product-desc">Great for keema & patties</p>
+          <div class="product-info">₹189 / 500g</div>
+          <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20Pork%20Mince" target="_blank" class="order-btn-small" aria-label="Order Pork Mince on WhatsApp">Order on WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1579762872174-92a7857cc79c?auto=format&fit=crop&w=500&q=60" alt="Marinated Chicken Tikka" class="product-image" />
+        <div class="product-content">
+          <h3 class="product-name">Marinated Chicken Tikka</h3>
+          <p class="product-desc">Ready to cook</p>
+          <div class="product-info">₹199 / 400g</div>
+          <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20Marinated%20Chicken%20Tikka" target="_blank" class="order-btn-small" aria-label="Order Marinated Chicken Tikka on WhatsApp">Order on WhatsApp</a>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="info-section" aria-label="Delivery and contact information">
+      <div class="info-box">
+        <div class="info-icon" aria-hidden="true">📍</div>
+        <div class="info-text">
+          <strong>Delivery Area:</strong><br />
+          Chandigarh (All sectors)
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-icon" aria-hidden="true">⏰</div>
+        <div class="info-text">
+          <strong>Delivery Time Slots:</strong><br />
+          10:00 AM – 1:00 PM & 5:00 PM – 9:00 PM
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-icon" aria-hidden="true">📱</div>
+        <div class="info-text">
+          <strong>Order on WhatsApp:</strong><br />
+          <a href="https://wa.me/919056551682" target="_blank" class="contact-link">9056551682</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Butcher Buddy. All rights reserved.
   </footer>
+
 </body>
 </html>
