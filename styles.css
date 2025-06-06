@@ -37,8 +37,8 @@ body {
 }
 
 .logo img.logo-img {
-  height: 50px;        /* Adjust height as needed */
-  max-width: 180px;    /* Prevents it from stretching too wide */
+  height: 100px;        /* Adjust height as needed */
+  max-width: 360px;    /* Prevents it from stretching too wide */
   width: auto;
   object-fit: contain;
   display: block;
