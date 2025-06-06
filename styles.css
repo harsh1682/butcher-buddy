@@ -294,7 +294,7 @@ h2 {
   height: 100%;
   width: 100%;
   background: black;
-  z-index: 9999;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,7 +302,8 @@ h2 {
 }
 
 .splash-logo {
-  width: 160px;
+  width: 200px;
+  heigth: auto;
   animation: zoomIn 1.2s ease-in-out;
 }
 
