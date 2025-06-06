@@ -72,7 +72,7 @@ const products = [
     price: 189,
     weight: "500g",
     category: "Chicken",
-    image: "Chicken_Sekh.jpeg"
+    image: "Chicken_Sekh.jpg"
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ const products = [
     price: 189,
     weight: "500g",
     category: "Chicken",
-    image: "Chicken_legs.jpeg"
+    image: "Chicken_legs.png"
   },
   {
     id: 9,
@@ -90,7 +90,7 @@ const products = [
     price: 189,
     weight: "500g",
     category: "Chicken",
-    image: "Chicken_feet.jpeg"
+    image: "Chicken_feet.jpg"
   },
 ];
 
