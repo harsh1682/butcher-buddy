@@ -9,8 +9,6 @@ body {
   background: #fff;
   color: #333;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -27,7 +25,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -36,37 +34,40 @@ body {
   justify-content: space-between;
 }
 
-.logo img.logo-img {
-  height: 100px;        /* Adjust height as needed */
-  max-width: 360px;    /* Prevents it from stretching too wide */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 50px;
+  max-width: 180px;
   width: auto;
   object-fit: contain;
   display: block;
-
 }
 
-nav ul.nav-links {
+.nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
 }
 
-nav ul.nav-links li a {
+.nav-links li a {
   color: #ddd;
   text-decoration: none;
   font-weight: 600;
   padding: 8px 12px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-nav ul.nav-links li a:hover,
-nav ul.nav-links li a.active {
-  background-color: #e53238; /* bright red */
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #e53238;
   color: white;
 }
 
-/* Categories bar */
+/* Categories */
 .categories {
   display: flex;
   gap: 15px;
@@ -76,8 +77,7 @@ nav ul.nav-links li a.active {
   border-bottom: 1px solid #eee;
 }
 
-.categories .category {
-  flex: 0 0 auto;
+.category {
   background-color: #f5f5f5;
   border: none;
   padding: 10px 22px;
@@ -85,26 +85,21 @@ nav ul.nav-links li a.active {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  user-select: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   color: #444;
 }
 
-.categories .category:hover {
+.category:hover,
+.category.active {
   background-color: #e53238;
   color: white;
 }
 
-.categories .category.active {
-  background-color: #e53238;
-  color: white;
-}
-
-/* Products grid */
+/* Products Grid */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   margin-bottom: 40px;
 }
@@ -112,16 +107,15 @@ nav ul.nav-links li a.active {
 .product-card {
   border: 1px solid #eee;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   padding: 15px;
   display: flex;
   flex-direction: column;
   background: white;
-  transition: box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
@@ -140,27 +134,26 @@ nav ul.nav-links li a.active {
   color: #222;
 }
 
-.product-card .desc {
+.desc {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 8px;
   flex-grow: 1;
 }
 
-.product-card .weight {
+.weight {
   font-weight: 600;
   color: #444;
   margin-bottom: 8px;
 }
 
-.product-card .price {
+.price {
   font-size: 1.2rem;
   font-weight: 700;
   color: #e53238;
   margin-bottom: 15px;
 }
 
-/* Button */
 .btn-primary {
   background-color: #e53238;
   color: white;
@@ -171,14 +164,13 @@ nav ul.nav-links li a.active {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease;
-  user-select: none;
 }
 
 .btn-primary:hover {
   background-color: #a12022;
 }
 
-/* Sections for contact, about, orders */
+/* Sections */
 #contact, #about, #orders {
   padding: 20px 0;
   border-top: 1px solid #eee;
@@ -201,17 +193,18 @@ footer {
   text-align: center;
   padding: 18px 15px;
   font-size: 0.9rem;
-  user-select: none;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  nav ul.nav-links {
+  .nav-links {
     gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
-  .product-card img {
-    height: 150px;
+  .logo-img {
+    height: 40px;
   }
 
   .btn-primary {
