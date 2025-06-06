@@ -1,195 +1,187 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: #fff;
-  color: #333;
-}
-a {
-  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff8f5;
+  color: #3a3a3a;
+  line-height: 1.6;
+  padding-bottom: 40px;
 }
 
-/* Header & Logo */
 header {
   background-color: #b22222;
+  padding: 18px 20px;
+  text-align: center;
   color: white;
-  padding: 20px 10px;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-header .logo-icon {
-  font-size: 2.5rem;
-  line-height: 1;
-}
-header h1 {
-  margin: 0;
-  font-weight: 700;
-  font-size: 2.8rem;
-}
-.tagline {
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  margin-top: -12px;
-  color: #b22222;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  user-select: none;
 }
 
-/* Hero Section */
 .hero {
-  background: url('https://images.unsplash.com/photo-1604908810997-4a8d0d860c61?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+  background: url('https://images.unsplash.com/photo-1604908810997-4a8d0d860c61?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;
   color: white;
-  padding: 80px 20px;
+  padding: 70px 20px 50px;
   text-align: center;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
-.hero h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.8rem;
-  margin-bottom: 20px;
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto 25px auto;
 }
-.hero a.order-btn {
+
+.btn-primary {
   background-color: #25d366;
   color: white;
-  padding: 16px 40px;
-  font-size: 1.2rem;
   font-weight: 700;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: inline-block;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
   transition: background-color 0.3s ease;
-}
-.hero a.order-btn:hover {
-  background-color: #1ebe5a;
+  display: inline-block;
+  user-select: none;
 }
 
-/* Products Section */
-.products {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 25px;
+.btn-primary:hover {
+  background-color: #1ebe5a;
+  cursor: pointer;
 }
+
+main {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
 .product-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.07);
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  background: #fff;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease;
 }
-.product-image {
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgb(0 0 0 / 0.1);
+}
+
+.product-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
-.product-content {
-  padding: 15px 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.product-name {
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin: 0 0 5px 0;
+
+.product-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
   color: #b22222;
+  margin: 15px 20px 8px;
 }
-.product-desc {
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-  color: #555;
+
+.product-card p {
+  margin: 0 20px 12px;
   flex-grow: 1;
+  color: #555;
 }
-.product-info {
-  font-weight: 600;
-  margin-bottom: 10px;
+
+.price {
+  font-weight: 700;
+  margin: 0 20px 12px;
+  font-size: 1.1rem;
+  color: #333;
 }
-.order-btn-small {
+
+.btn-secondary {
   background-color: #25d366;
   color: white;
-  padding: 10px;
-  border-radius: 6px;
+  margin: 0 20px 20px 20px;
+  padding: 10px 0;
+  border-radius: 30px;
   font-weight: 700;
   font-size: 1rem;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease;
+  user-select: none;
   display: block;
 }
-.order-btn-small:hover {
+
+.btn-secondary:hover {
   background-color: #1ebe5a;
+  cursor: pointer;
 }
 
-/* Delivery & Contact Section */
-.info-section {
-  max-width: 960px;
-  margin: 50px auto 30px auto;
-  padding: 0 20px;
+.info {
+  max-width: 700px;
+  margin: 60px auto 20px;
   display: flex;
-  gap: 40px;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-}
-.info-box {
-  flex: 1 1 250px;
-  border-left: 6px solid #b22222;
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  font-size: 1rem;
+  gap: 30px;
+  font-size: 1.1rem;
   color: #444;
-  display: flex;
-  align-items: center;
-  gap: 15px;
 }
-.info-icon {
-  font-size: 2.2rem;
+
+.info div {
+  min-width: 200px;
+}
+
+.info strong {
   color: #b22222;
-}
-.info-text strong {
   font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
 }
-.contact-link {
+
+.info a {
   color: #b22222;
-  font-weight: bold;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-/* Footer */
+.info a:hover {
+  text-decoration: underline;
+}
+
 footer {
-  background: #222;
-  color: white;
   text-align: center;
-  padding: 14px 10px;
+  margin-top: 60px;
   font-size: 0.9rem;
-  letter-spacing: 1px;
-  margin-top: 40px;
+  color: #999;
+  user-select: none;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 600px) {
-  header {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .info {
     flex-direction: column;
-    letter-spacing: normal;
+    align-items: center;
   }
-  .hero h2 {
-    font-size: 2rem;
-  }
-  .products {
-    grid-template-columns: 1fr;
-  }
-  .info-section {
-    flex-direction: column;
-    gap: 20px;
+  .info div {
+    min-width: 100%;
+    text-align: center;
   }
 }
