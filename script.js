@@ -46,7 +46,7 @@ const products = [
     category: "pork",
     price: "₹400/kg",
     description: "Tender pork ribs - perfect for BBQ and smoking",
-    image: "Images/Pork_ribs.jpeg", // Replace with your actual image path
+    image: "Images/Pork_rib.png", // Replace with your actual image path
     icon: "🍖",
     badge: "BBQ Special"
   },
