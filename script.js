@@ -1,128 +1,234 @@
-// Splash screen hide after delay
-    window.addEventListener("load", function () {
-      const splash = document.getElementById("splash-screen");
-      const content = document.getElementById("main-content");
-
-      setTimeout(() => {
-        splash.style.opacity = 0;
-        splash.style.pointerEvents = "none";
-        content.style.display = "block";
-      }, 2500);
-    });
-
+// Sample product data with images
 const products = [
   {
     id: 1,
-    name: "Leg Boneless Curry Cut",
-    description: "Bone-in, skinless chunks",
-    price: 149,
-    weight: "500g",
+    name: "Fresh Chicken Breast",
     category: "chicken",
-    image: "Leg_Boneless.jpeg"
+    price: "₹280/kg",
+    description: "Boneless, skinless chicken breast - perfect for healthy meals",
+    image: "chicken-breast.jpg", // Replace with your actual image path
+    icon: "🐔",
+    badge: "Popular"
   },
   {
     id: 2,
-    name: "Chicken Breast Boneless",
-    description: "Tender, juicy",
-    price: 179,
-    weight: "500g",
-    category: "chicken",
-    image: "Chicken_breast.jpg"
+    name: "Chicken Drumsticks",
+    category: "chicken", 
+    price: "₹200/kg",
+    description: "Juicy chicken drumsticks - great for grilling and curry",
+    image: "chicken-drumsticks.jpg", // Replace with your actual image path
+    icon: "🍗",
+    badge: "Fresh"
   },
   {
     id: 3,
-    name: "Pork Ribs",
-    description: "Perfect for BBQ & grilling",
-    price: 249,
-    weight: "500g",
-    category: "pork",
-    image: "Pork_ribs.jpeg"
+    name: "Whole Chicken",
+    category: "chicken",
+    price: "₹180/kg",
+    description: "Fresh whole chicken - cleaned and ready to cook",
+    image: "whole-chicken.jpg", // Replace with your actual image path
+    icon: "🐔",
+    badge: "Best Value"
   },
   {
     id: 4,
-    name: "Pork Mince",
-    description: "Great for keema & patties",
-    price: 189,
-    weight: "500g",
+    name: "Pork Shoulder",
     category: "pork",
-    image: "Pork_keema.jpeg"
+    price: "₹350/kg",
+    description: "Premium pork shoulder cuts - ideal for roasting",
+    image: "pork-shoulder.jpg", // Replace with your actual image path
+    icon: "🥩",
+    badge: "Premium"
   },
   {
     id: 5,
-    name: "Chicken Salami",
-    description: "Ready to cook",
-    price: 199,
-    weight: "400g",
-    category: "Chicken",
-    image: "Salami.jpeg"
+    name: "Pork Ribs",
+    category: "pork",
+    price: "₹400/kg",
+    description: "Tender pork ribs - perfect for BBQ and smoking",
+    image: "pork-ribs.jpg", // Replace with your actual image path
+    icon: "🍖",
+    badge: "BBQ Special"
   },
   {
     id: 6,
-    name: "Chicken Mince",
-    description: "Great for keema & patties",
-    price: 189,
-    weight: "500g",
-    category: "Chicken",
-    image: "Chicken_Keema.jpeg"
+    name: "Pork Belly",
+    category: "pork",
+    price: "₹320/kg",
+    description: "Juicy pork belly slices - great for stir-fry and curry",
+    image: "pork-belly.jpg", // Replace with your actual image path
+    icon: "🥓",
+    badge: "Chef's Choice"
   },
   {
     id: 7,
-    name: "Chicken Seekh",
-    description: "Ready to cook",
-    price: 189,
-    weight: "500g",
-    category: "Chicken",
-    image: "Chicken_Sekh.jpg"
+    name: "Mutton Leg",
+    category: "mutton",
+    price: "₹550/kg",
+    description: "Fresh mutton leg pieces - excellent for curry and biryani",
+    image: "mutton-leg.jpg", // Replace with your actual image path
+    icon: "🐑",
+    badge: "Fresh"
   },
   {
     id: 8,
-    name: "Chicken leg",
-    description: "Ready to cook and barbeque",
-    price: 189,
-    weight: "500g",
-    category: "Chicken",
-    image: "Chicken_legs.png"
+    name: "Mutton Chops",
+    category: "mutton",
+    price: "₹580/kg",
+    description: "Premium mutton chops - perfect for special occasions",
+    image: "mutton-chops.jpg", // Replace with your actual image path
+    icon: "🥩",
+    badge: "Premium"
   },
   {
     id: 9,
-    name: "Chicken feet",
-    description: "Ready to cook",
-    price: 189,
-    weight: "500g",
-    category: "Chicken",
-    image: "Chicken_feet.jpg"
-  },
+    name: "Goat Curry Cut",
+    category: "mutton",
+    price: "₹520/kg",
+    description: "Tender goat meat curry cut - bone-in pieces",
+    image: "goat-curry-cut.jpg", // Replace with your actual image path
+    icon: "🐐",
+    badge: "Traditional"
+  }
 ];
 
-const productsContainer = document.querySelector(".products");
-const categoryButtons = document.querySelectorAll(".category");
+// DOM elements
+const productsGrid = document.getElementById('products-grid');
+const categoryButtons = document.querySelectorAll('.category');
+const navLinks = document.querySelectorAll('.nav-link');
+const splash = document.getElementById('splash-screen');
+const mainContent = document.getElementById('main-content');
 
-function renderProducts(filter = "all") {
-  productsContainer.innerHTML = "";
-  const filteredProducts = filter === "all" ? products : products.filter(p => p.category.toLowerCase() === filter.toLowerCase());
-
-  filteredProducts.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-
-    card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}" loading="lazy"/>
-      <h3>${product.name}</h3>
-      <p class="desc">${product.description}</p>
-      <p class="weight">${product.weight}</p>
-      <p class="price">₹${product.price}</p>
-      <a href="https://wa.me/919056551682?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}" target="_blank" class="btn-primary" aria-label="Order ${product.name} on WhatsApp">Order Now</a>
-    `;
-    productsContainer.appendChild(card);
-  });
+// Render products
+function renderProducts(filterCategory = 'all') {
+  const filteredProducts = filterCategory === 'all' 
+    ? products 
+    : products.filter(product => product.category === filterCategory);
+  
+  productsGrid.innerHTML = filteredProducts.map(product => `
+    <div class="product-card" data-category="${product.category}">
+      <div class="product-image ${!product.image ? 'no-image' : ''}" id="img-${product.id}">
+        ${product.image ? 
+          `<img src="${product.image}" alt="${product.name}" onerror="handleImageError(${product.id}, '${product.icon}')" />` 
+          : `<span class="fallback-icon">${product.icon}</span>`
+        }
+        <div class="product-badge">${product.badge}</div>
+      </div>
+      <div class="product-info">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <div class="product-price">
+          <span class="price">${product.price}</span>
+          <button class="order-btn" onclick="orderProduct('${product.name}')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
 }
 
-categoryButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderProducts(btn.getAttribute("data-cat"));
+// Handle image loading errors
+function handleImageError(productId, fallbackIcon) {
+  const imageContainer = document.getElementById(`img-${productId}`);
+  if (imageContainer) {
+    imageContainer.classList.add('no-image');
+    imageContainer.innerHTML = `
+      <span class="fallback-icon">${fallbackIcon}</span>
+      <div class="product-badge">${imageContainer.querySelector('.product-badge').textContent}</div>
+    `;
+  }
+}
+
+// Category filtering
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    categoryButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    renderProducts(button.dataset.cat);
   });
 });
 
-renderProducts();
+// Order function
+function orderProduct(productName) {
+  const message = `Hi! I'd like to order ${productName}. Please let me know the availability and total price.`;
+  const whatsappUrl = `https://wa.me/919056551682?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+// Smooth scrolling for navigation
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Update active nav link
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+// Splash screen
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    splash.style.opacity = '0';
+    splash.style.pointerEvents = 'none';
+    mainContent.style.display = 'block';
+    setTimeout(() => {
+      splash.style.display = 'none';
+    }, 800);
+  }, 2500);
+});
+
+// Initialize products on page load
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts();
+});
+
+// Additional utility functions for future enhancements
+
+// Add product to favorites (for future implementation)
+function addToFavorites(productId) {
+  console.log(`Product ${productId} added to favorites`);
+  // Implementation can be added here
+}
+
+// Search functionality (for future implementation)
+function searchProducts(searchTerm) {
+  const filteredProducts = products.filter(product => 
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  
+  productsGrid.innerHTML = filteredProducts.map(product => `
+    <div class="product-card" data-category="${product.category}">
+      <div class="product-image ${!product.image ? 'no-image' : ''}" id="img-${product.id}">
+        ${product.image ? 
+          `<img src="${product.image}" alt="${product.name}" onerror="handleImageError(${product.id}, '${product.icon}')" />` 
+          : `<span class="fallback-icon">${product.icon}</span>`
+        }
+        <div class="product-badge">${product.badge}</div>
+      </div>
+      <div class="product-info">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <div class="product-price">
+          <span class="price">${product.price}</span>
+          <button class="order-btn" onclick="orderProduct('${product.name}')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Update product prices (for admin use)
+function updateProductPrice(productId, newPrice) {
+  const product = products.find(p => p.id === productId);
+  if (product) {
+    product.price = newPrice;
+    renderProducts(); // Re-render to show updated price
+    console.log(`Price updated for ${product.name}: ${newPrice}`);
+  }
+}
