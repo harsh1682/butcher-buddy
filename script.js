@@ -25,7 +25,7 @@ const products = [
     category: "chicken",
     price: "₹180/kg",
     description: "Fresh whole chicken - cleaned and ready to cook",
-    image: "Images/leg_Boneless.jpg", 
+    image: "Images/Leg_Boneless.jpg", 
     icon: "🐔",
     badge: "Best Value"
   },
