@@ -11,20 +11,20 @@ const products = [
   },
   {
     id: 2,
-    name: "Chicken Drumsticks",
+    name: "Chicken Legs",
     category: "chicken", 
     price: "₹200/kg",
-    description: "Juicy chicken drumsticks - great for grilling and curry",
-    image: "Images/Chicken_drumsticks.jpg", 
+    description: "Juicy chicken legs - great for BBQ and curry",
+    image: "Images/Chicken_legs.png", 
     icon: "🍗",
     badge: "Fresh"
   },
   {
     id: 3,
-    name: "Whole Chicken",
+    name: "Leg Boneless Chicken",
     category: "chicken",
     price: "₹180/kg",
-    description: "Fresh whole chicken - cleaned and ready to cook",
+    description: " Leg Boneless chicken - cleaned and ready to cook",
     image: "Images/Leg_Boneless.jpeg", 
     icon: "🐔",
     badge: "Best Value"
