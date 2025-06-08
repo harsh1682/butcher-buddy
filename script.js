@@ -1,4 +1,3 @@
-// Sample product data with images
 const products = [
   {
     id: 1,
@@ -6,7 +5,7 @@ const products = [
     category: "chicken",
     price: "₹280/kg",
     description: "Boneless, skinless chicken breast - perfect for healthy meals",
-    image: "Images/Chicken breast.jpeg", // Replace with your actual image path
+    image: "Images/Chicken breast.jpeg",
     icon: "🐔",
     badge: "Popular"
   },
@@ -16,7 +15,7 @@ const products = [
     category: "chicken", 
     price: "₹200/kg",
     description: "Juicy chicken drumsticks - great for grilling and curry",
-    image: "Images/Chicken_drumsticks.jpg", // Replace with your actual image path
+    image: "Images/Chicken_drumsticks.jpg", 
     icon: "🍗",
     badge: "Fresh"
   },
@@ -26,7 +25,7 @@ const products = [
     category: "chicken",
     price: "₹180/kg",
     description: "Fresh whole chicken - cleaned and ready to cook",
-    image: "whole-chicken.jpg", // Replace with your actual image path
+    image: "Images/leg_Boneless.jpg", 
     icon: "🐔",
     badge: "Best Value"
   },
@@ -36,7 +35,7 @@ const products = [
     category: "pork",
     price: "₹350/kg",
     description: "Premium pork shoulder cuts - ideal for roasting",
-    image: "pork-shoulder.jpg", // Replace with your actual image path
+    image: "pork-shoulder.jpg", 
     icon: "🥩",
     badge: "Premium"
   },
@@ -46,7 +45,7 @@ const products = [
     category: "pork",
     price: "₹400/kg",
     description: "Tender pork ribs - perfect for BBQ and smoking",
-    image: "Images/Pork_rib.png", // Replace with your actual image path
+    image: "Images/Pork_rib.png", 
     icon: "🍖",
     badge: "BBQ Special"
   },
@@ -56,7 +55,7 @@ const products = [
     category: "pork",
     price: "₹320/kg",
     description: "Juicy pork belly slices - great for stir-fry and curry",
-    image: "pork-belly.jpg", // Replace with your actual image path
+    image: "pork-belly.jpg",
     icon: "🥓",
     badge: "Chef's Choice"
   },
@@ -66,7 +65,7 @@ const products = [
     category: "mutton",
     price: "₹550/kg",
     description: "Fresh mutton leg pieces - excellent for curry and biryani",
-    image: "mutton-leg.jpg", // Replace with your actual image path
+    image: "mutton-leg.jpg",
     icon: "🐑",
     badge: "Fresh"
   },
@@ -76,7 +75,7 @@ const products = [
     category: "mutton",
     price: "₹580/kg",
     description: "Premium mutton chops - perfect for special occasions",
-    image: "mutton-chops.jpg", // Replace with your actual image path
+    image: "mutton-chops.jpg",
     icon: "🥩",
     badge: "Premium"
   },
@@ -86,7 +85,7 @@ const products = [
     category: "mutton",
     price: "₹520/kg",
     description: "Tender goat meat curry cut - bone-in pieces",
-    image: "goat-curry-cut.jpg", // Replace with your actual image path
+    image: "goat-curry-cut.jpg",
     icon: "🐐",
     badge: "Traditional"
   }
