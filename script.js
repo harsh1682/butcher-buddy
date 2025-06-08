@@ -95,8 +95,12 @@ const products = [
 const productsGrid = document.getElementById('products-grid');
 const categoryButtons = document.querySelectorAll('.category');
 const navLinks = document.querySelectorAll('.nav-link');
+const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
 const splash = document.getElementById('splash-screen');
 const mainContent = document.getElementById('main-content');
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
+
 
 // Render products
 function renderProducts(filterCategory = 'all') {
@@ -153,20 +157,48 @@ function orderProduct(productName) {
   window.open(whatsappUrl, '_blank');
 }
 
+// Mobile menu toggle
+mobileMenuBtn.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+  mobileMenuBtn.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+});
+
 // Smooth scrolling for navigation
+function handleNavClick(e, link) {
+  e.preventDefault();
+  const targetId = link.getAttribute('href');
+  const targetSection = document.querySelector(targetId);
+  if (targetSection) {
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  }
+      
+// Update active nav link
+document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+link.classList.add('active');
+      
+// Close mobile menu if open
+if (mobileNav.classList.contains('active')) {
+  mobileNav.classList.remove('active');
+  mobileMenuBtn.textContent = '☰';
+ }
+}    
+
+// Desktop navigation
 navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    // Update active nav link
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    link.classList.add('active');
-  });
+  link.addEventListener('click', (e) => handleNavClick(e, link));
+});
+
+// Mobile navigation
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', (e) => handleNavClick(e, link));
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.header-container') && mobileNav.classList.contains('active')) {
+    mobileNav.classList.remove('active');
+    mobileMenuBtn.textContent = '☰';
+  }
 });
 
 // Splash screen
