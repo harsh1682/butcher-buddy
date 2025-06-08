@@ -6,7 +6,7 @@ const products = [
     category: "chicken",
     price: "₹280/kg",
     description: "Boneless, skinless chicken breast - perfect for healthy meals",
-    image: "chicken-breast.jpg", // Replace with your actual image path
+    image: "Images/Chicken breast.jpeg", // Replace with your actual image path
     icon: "🐔",
     badge: "Popular"
   },
@@ -16,7 +16,7 @@ const products = [
     category: "chicken", 
     price: "₹200/kg",
     description: "Juicy chicken drumsticks - great for grilling and curry",
-    image: "chicken-drumsticks.jpg", // Replace with your actual image path
+    image: "Images/Chicken_drumsticks.jpg", // Replace with your actual image path
     icon: "🍗",
     badge: "Fresh"
   },
@@ -46,7 +46,7 @@ const products = [
     category: "pork",
     price: "₹400/kg",
     description: "Tender pork ribs - perfect for BBQ and smoking",
-    image: "pork-ribs.jpg", // Replace with your actual image path
+    image: "Images/Pork_ribs.jpeg", // Replace with your actual image path
     icon: "🍖",
     badge: "BBQ Special"
   },
